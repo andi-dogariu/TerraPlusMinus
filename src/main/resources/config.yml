@@ -51,9 +51,11 @@ linked_worlds:
 # If disabled, tree generation is turned off.
 generate_trees: true
 
-# The biomes will be generated with https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.
-# If turned off, everything will be plains biome.
-different_biomes: true
+# If enabled, biomes will be generated based on: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.
+different_biomes:
+  enabled: true
+  # If 'enabled' is false, this biome will be used everywhere instead.
+  default_biome: PLAINS
 
 # Customize the material, the blocks will be generated with.
 surface_material: GRASS_BLOCK
@@ -63,4 +65,4 @@ path_material: MOSS_BLOCK
 # -----------------------------------------------------
 
 # NOTE: Do not change
-config_version: 1.4
+config_version: 1.5

@@ -249,6 +249,20 @@ public final class Terraplusminus extends JavaPlugin implements Listener {
                             "    - name: another_world/server                 # e.g. this world/server has a datapack to extend height to 2032. it covers the height section 2033 - 4064 m a.s.l. it has a y-offset of 2032\n" +
                             "      offset: -2032\n\n");
         }
+        if (configVersion == 1.4) {
+            this.config.set("config_version", 1.5);
+            this.saveConfig();
+            boolean differentBiomes = Terraplusminus.config.getBoolean("different_biomes");
+            FileBuilder.deleteLine("# The biomes will be generated with https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.");
+            FileBuilder.deleteLine("# If turned off, everything will be plains biome.");
+            FileBuilder.deleteLine("different_biomes:");
+            FileBuilder.addLineAbove("# Customize the material, the blocks will be generated with.",
+                    "# If enabled, biomes will be generated based on: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.\n" +
+                            "different_biomes:\n" +
+                            "  enabled: " + differentBiomes + "\n" +
+                            "  # If 'enabled' is false, this biome will be used everywhere instead.\n" +
+                            "  default_biome: PLAINS\n\n");
+        }
     }
 
     private void registerCommands() {

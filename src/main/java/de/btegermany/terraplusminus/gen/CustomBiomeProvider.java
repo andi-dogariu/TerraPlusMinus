@@ -32,7 +32,7 @@ public class CustomBiomeProvider extends BiomeProvider {
     @NotNull
     @Override
     public Biome getBiome(@NotNull WorldInfo worldInfo, int x, int y, int z) {
-        if (Terraplusminus.config.getBoolean("different_biomes")) {
+        if (Terraplusminus.config.getBoolean("different_biomes.enabled")) {
             double[] coords;
             try {
                 coords = this.projection.toGeo(x, z);
@@ -47,7 +47,7 @@ public class CustomBiomeProvider extends BiomeProvider {
 
             }
         } else biomeData = 8;
-        return Biome.PLAINS;
+        return Biome.valueOf(Terraplusminus.config.getString("different_biomes.default_biome", "PLAINS").toUpperCase());
     }
 
     public double getBiome() {
