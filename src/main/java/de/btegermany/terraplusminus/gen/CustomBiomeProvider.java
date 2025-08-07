@@ -144,7 +144,8 @@ public class CustomBiomeProvider extends BiomeProvider {
     }
 
     public Biome parseDefaultBiome(){
-        String biomeName = Terraplusminus.config.getString("biomes.default_biome").toLowerCase();
+        String biomeName = Terraplusminus.config.getString("biomes.default_biome");
+        biomeName = (biomeName != null) ? biomeName.toLowerCase() : "plains";
         var biomeRegistry = RegistryAccess.registryAccess().getRegistry(RegistryKey.BIOME);
         var biome = biomeRegistry.get(Key.key(biomeName));
         if (biome == null) {
