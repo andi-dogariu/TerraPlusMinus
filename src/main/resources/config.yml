@@ -51,11 +51,12 @@ linked_worlds:
 # If disabled, tree generation is turned off.
 generate_trees: true
 
-# If enabled, biomes will be generated based on: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.
-different_biomes:
-  enabled: true
+# If use_dataset enabled, biomes will be generated based on: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.
+biomes:
+  use_dataset: true
   # If 'enabled' is false, this biome will be used everywhere instead.
-  default_biome: PLAINS
+  # Possible values found in resource names on: https://minecraft.fandom.com/wiki/Biome#Biome_IDs
+  default_biome: plains
 
 # Customize the material, the blocks will be generated with.
 surface_material: GRASS_BLOCK

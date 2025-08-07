@@ -257,11 +257,12 @@ public final class Terraplusminus extends JavaPlugin implements Listener {
             FileBuilder.deleteLine("# If turned off, everything will be plains biome.");
             FileBuilder.deleteLine("different_biomes:");
             FileBuilder.addLineAbove("# Customize the material, the blocks will be generated with.",
-                    "# If enabled, biomes will be generated based on: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.\n" +
-                            "different_biomes:\n" +
-                            "  enabled: " + differentBiomes + "\n" +
+                    "# If use_dataset enabled, biomes will be generated based on: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification.\n" +
+                            "biomes:\n" +
+                            "  use_dataset: " + differentBiomes + "\n" +
                             "  # If 'enabled' is false, this biome will be used everywhere instead.\n" +
-                            "  default_biome: PLAINS\n\n");
+                            "  # Possible values found in resource names on: https://minecraft.fandom.com/wiki/Biome#Biome_IDs\n" +
+                            "  default_biome: plains\n\n");
         }
     }
 
